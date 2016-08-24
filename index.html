@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="/css/dropzone.css">
+    <script src="js/dropzone.js"></script>
+    <!--<link rel="stylesheet/less" type="text/css" href="styles.less" />-->
   </head>
   <body>
     <div class="main">
@@ -22,7 +25,7 @@
               <span>Москва, ул. Неизвестная, 00 </span>
               <span>офис 00</span>
             </div>
-            <div class="cir animated"><i class="fa fa-phone" aria-hidden="true"></i></div>
+            <div class="cir animated call-pop-up"><i class="fa fa-phone" aria-hidden="true"></i></div>
           </div>
         </div>
       </header>
@@ -31,10 +34,9 @@
           <h1>Срочный выкуп</h1>
           <h2>спецтехники и легковых автомобилей</h2>
           <h3>в Москве и центральной части России</h3>
-          <button class="call animated">Звоните!</button>
-
-
-          
+          <div class="call">
+            <button class="call call-pop-up animated">Звоните!</button>
+          </div>
           <h5>Mы отправимся к Вам уже через 30 минут </h5>
         </div>
       </div>
@@ -178,18 +180,14 @@
             <img src="img/3_2.png" alt="">
           </div>
           <h4>А можете поступить лучше и проще -<br>  обратиться к профессионалам!</h4>
-          <div class="form callback-form">
-            <div class="name">
-              <span>Напишите Ваше имя</span>
-              <input type="text" class="callback-form-name input-name" placeholder="Велимир">
-            </div>
-            <div class="phone">
-              <input type="text" class="callback-form-phone input-phone" placeholder="Ваш телефон">
-            </div>
-            <button class="send callback-form-btn">отправить</button>
+          <form action="#" class="form callback-form-block">
+            <span>Напишите Ваше имя</span>
+            <input type="text" name="name" class="input-name" placeholder="Велимир">
+            <input type="text" name="phone" class="input-phone" placeholder="Ваш телефон">
+            <button class="send callback-form-block-btn">отправить</button>
             <h5>Мы позвоним Вам в течении часа</h5>
             <span class="secret"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Ваши контактные данные ни при каких условиях не будут переданы третьим лицам</span>
-          </div>
+          </form>
         </div>
       </div>
       <div class="part4">
@@ -229,74 +227,84 @@
       <div class="part6">
         <div class="contain">
           <h2>Закажите оценку техсредства!</h2>
-          <button class="call">по телефону</button>
-          <h3>или<br> в режиме онлайн</h3>
-          <div class="form-online">
-            <div class="block">
-              <div class="inline">
-                <select>
-                  <option selected disabled>Укажите вид спецтехники</option>
-                  <option>Автокраны</option>
-                  <option>Автовышки</option>
-                  <option>Экскаваторы всех типов</option>
-                </select>
-                <select>
-                  <option selected disabled>Год выпуска</option>
-                  <option>2001</option>
-                  <option>1996</option>
-                  <option>3156</option>
-                  <option>4562</option>
-                </select>
-
-                <span>Приложите изображения </span>
-              </div>
-              <div class="inline">
-                <select>
-                  <option selected disabled>Марку и модель</option>
-                  <option>Автокраны</option>
-                  <option>Автовышки</option>
-                  <option>Экскаваторы всех типов</option>
-                </select>
-                <select>
-                  <option selected disabled>Время эксплуатации</option>
-                  <option>Автокраны</option>
-                  <option>Автовышки</option>
-                  <option>Экскаваторы всех типов</option>
-                </select>
-              </div>
-            </div>
-            <div class="block">
-              <div class="inline">
-                <div class="image inline">
-                  <div class="animated zoomIn cover-bg"></div>
-                  <div class="cover-title">
-                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                  </div>
-                  <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                </div>
-                <div class="image inline">
-                  <div class="animated zoomIn cover-bg"></div>
-                  <div class="cover-title">
-                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                  </div>
-                  <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                </div>
-                <div class="image inline">
-                  <div class="animated zoomIn cover-bg"></div>
-                  <div class="cover-title">
-                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                  </div>
-                  <i class="fa fa-plus-circle" aria-hidden="true"> </i>
-                </div>
-              </div>
-              <div class="inline">
-                <input type="text" placeholder="Сообщите Ваш номер телефона">
-                <div class="inline_right">
-                  <button class="send">отправить</button>
-                </div>
-              </div>
-            </div>
+          <div class="call">
+            <button class="call call-pop-up animated">по телефону</button>
           </div>
+          <h3>или<br> в режиме онлайн</h3>
+          <form name="online" method="POST" enctype="multipart/form-data">
+            <div class="form-online">
+              <div class="block">
+                <div class="inline">
+                  <select name="type" class="form-online-type">
+                    <option selected disabled>Укажите вид спецтехники</option>
+                    <option>Автокраны</option>
+                    <option>Автовышки</option>
+                    <option>Экскаваторы всех типов</option>
+                  </select>
+                  <select name="year" class="form-online-year">
+                    <option selected disabled>Год выпуска</option>
+                    <option>2001</option>
+                    <option>1996</option>
+                    <option>3156</option>
+                    <option>4562</option>
+                  </select>
+
+                  <span>Приложите изображения </span>
+                </div>
+                <div class="inline">
+                  <select name="mark" class="form-online-mark">
+                    <option selected disabled>Марку и модель</option>
+                    <option>Автокраны</option>
+                    <option>Автовышки</option>
+                    <option>Экскаваторы всех типов</option>
+                  </select>
+                  <select name="age" class="form-online-age">
+                    <option selected disabled>Время эксплуатации</option>
+                    <option>Автокраны</option>
+                    <option>Автовышки</option>
+                    <option>Экскаваторы всех типов</option>
+                  </select>
+                </div>
+              </div>
+              <div class="block block_image">
+                <div class="inline form-online-file">
+                  
+                  <div class="image inline form-online-file-preview" data-item="0">
+                    <input name="image1" class="form-online-file-selector" type="file">
+                    <div class="animated zoomIn cover-bg"></div>
+                    <div class="cover-title">
+                      <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                    </div>
+                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                  </div>
+                  <div class="image inline form-online-file-preview" data-item="1">
+                    <input name="image2" class="form-online-file-selector" type="file">
+                    <div class="animated zoomIn cover-bg"></div>
+                    <div class="cover-title">
+                      <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                    </div>
+                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                  </div>
+                  <div class="image inline form-online-file-preview" data-item="2">
+                    <input name="image3" class="form-online-file-selector" type="file">
+                    <div class="animated zoomIn cover-bg"></div>
+                    <div class="cover-title">
+                      <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                    </div>
+                    <i class="fa fa-plus-circle" aria-hidden="true"> </i>
+                  </div>
+                </div>
+                <div class="inline">
+                  <input type="text" class="form-online-phone" placeholder="Сообщите Ваш номер телефона">
+                  <div class="inline_right">
+                    <div class="call">
+                      <button class="send animated form-online-btn">отправить</button>
+                    </div>                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
           <h5>Мы произведем предварительную оценку и позвоним!</h5>
         </div>
       </div>
@@ -347,7 +355,9 @@
           <h5>Есть вопросы?</h5>
           <div class="details block">
             <h3>Наш менеджер</h3>
-            <button class="call">разъяснит</button>
+            <div class="call">
+              <button class="call call-pop-up animated">разъяснит</button>
+            </div>
             <h3>все подробности!</h3>
           </div>
         </div>
@@ -359,7 +369,10 @@
             <div class="inline_left inline list1">
               <div class="sell">
                 <h4>Вы хотите продать <br>спецтехнику</h4>
-                <button class="call">Звоните!</button>
+                <div class="call">
+                  <button class="call call-pop-up animated">Звоните!</button>
+                </div>
+                
               </div>
               <div class="yourcall">
                 <h4>от Вашего звонка до выезда для <br>детального осмотра пройдет не <br>более 30 минут</h4>
@@ -425,20 +438,22 @@
             </div>
           </div>
           <h2>Контакты</h2>
-          <div class="inline inline_contacts block" data-vc-offset="1000">
+          <div class="inline inline_contacts block">
             <i class="fa fa-phone" aria-hidden="true"></i>
             <h6>8(800) 000-00-00 </h6>
           </div>
-          <div class="inline inline_contacts block" data-vc-offset="2000">
+          <div class="inline inline_contacts block">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <h6>Москва, ул. Неизвестная, 00 <br>офис 00</h6>
           </div>
-          <div class="inline inline_contacts block" data-vc-offset="3000">
+          <div class="inline inline_contacts block">
             <i class="fa fa-clock-o" aria-hidden="true"></i>             
             <h6>Пн-Пт с  9-00 до 18-00 <br>Сб - выходной</h6>
           </div>
           <div class="technique">
-            <button class="call">Звоните!</button>
+            <div class="call">
+              <button class="call call-pop-up animated">Звоните!</button>
+            </div>
             <h5> Техника не должна стоять без дела!  <br>Она стоит денег! </h5>
           </div>
         </div>
@@ -460,18 +475,14 @@
         <h2>Продать</h2>
         <div class="modal-data">
         </div>
-        <div class="form callback-form">
-          <div class="name">
-            <span>Напишите Ваше имя</span>
-            <input type="text" class="input-name callback-form-name" placeholder="Велимир">
-          </div>
-          <div class="phone">
-            <input type="text" class="callback-form-phone input-phone" placeholder="Ваш телефон">
-          </div>
-          <button href="openModal_tnx" class="send callback-form-btn">отправить</button>
+        <form class="form callback-form-modal">
+          <span>Напишите Ваше имя</span>
+          <input type="text" name="name" class="input-name" placeholder="Велимир" data-title="Имя: ">
+          <input type="text" name="phone" class="input-phone" placeholder="Ваш телефон" data-title="Телефон: ">
+          <button class="send callback-form-modal-btn">отправить</button>
           <h5>Мы позвоним Вам в течении часа</h5>
           <span class="secret"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Ваши контактные данные ни при каких условиях не будут переданы третьим лицам</span>
-        </div>
+        </form>
         <a href="#close" title="Close" class="close">
           <i class="fa fa-times-circle" aria-hidden="true"></i>
         </a>
@@ -494,6 +505,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
     <script src="jquery.viewportchecker.min.js"></script>
+    <script src="js/form.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
