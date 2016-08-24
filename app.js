@@ -23,57 +23,91 @@ $(document).ready(function() {
     })
   }
 
+  $.validator.addMethod(
+    'regexp',
+    function (value, element, regexp) {
+      var re = new RegExp(regexp);
+      return this.optional(element) || re.test(value);
+    },
+    "Please check your input."
+  );
+
+  $.validator.addClassRules({
+    name: {
+      required: true,
+      minlength: 4,
+    },
+    phone: {
+      required: true,
+      minlength: 15,
+      regexp: '[^_]+$',
+    },
+  });
+
   function thanks() {
     window.location.href="#openModal_tnx";
     setTimeout(function(){window.location.href="#close"}, 5000);
   }
 
+  $('form').each(function () {
+    $(this).validate({
+      errorPlacement: function (error, element) {
 
-  $('.callback-form-block-btn').click(function() {
-    var msg   = $('.callback-form-block').serializeArray();
-    for (var i=0;i<msg.length;i++) {
-      console.log(msg[i]);
-      console.log(msg[i].name);
-    }
-    console.log(msg);
-    jQuery.ajax({
-      url:'/form-handler.php', 
-      type: "POST",
-      data: msg, 
-      success: function(response) { 
-        console.log('Success!');
-        window.location.href="#openModal_tnx";
-        setTimeout(function(){window.location.href="#close"}, 5000);
       },
-      error: function(response) { 
-        console.log('Error!');
+      submitHandler: function (form) {
+        var object = $(form);
+        send(object);
       }
     });
-    return false;
-  })
+  });
+  $(".phone").inputmask("mask", {"mask": "+7(999) 999-99-99"}); 
 
-  $('.callback-form-modal-btn').click(function() {
-    var msg   = $('.callback-form-modal').serializeArray();
-    for (var i=0;i<msg.length;i++) {
-      console.log(msg[i]);
-      console.log(msg[i].name);
-    }
-    console.log(msg);
-    jQuery.ajax({
-      url:'/form-handler.php',
-      type: "POST", 
-      data: msg, 
-      success: function(response) { 
-        console.log('Success!');
-        window.location.href="#openModal_tnx";
-        setTimeout(function(){window.location.href="#close"}, 5000);
-      },
-      error: function(response) { 
-        console.log('Error!');
-      }
-    });
-    return false;
-  })
+
+  // $('.callback-form-block-btn').click(function() {
+  //   var msg   = $('.callback-form-block').serializeArray();
+  //   for (var i=0;i<msg.length;i++) {
+  //     console.log(msg[i]);
+  //     console.log(msg[i].name);
+  //   }
+  //   console.log(msg);
+  //   jQuery.ajax({
+  //     url:'/form-handler.php', 
+  //     type: "POST",
+  //     data: msg, 
+  //     success: function(response) { 
+  //       console.log('Success!');
+  //       window.location.href="#openModal_tnx";
+  //       setTimeout(function(){window.location.href="#close"}, 5000);
+  //     },
+  //     error: function(response) { 
+  //       console.log('Error!');
+  //     }
+  //   });
+  //   return false;
+  // })
+
+  // $('.callback-form-modal-btn').click(function() {
+  //   var msg   = $('.callback-form-modal').serializeArray();
+  //   for (var i=0;i<msg.length;i++) {
+  //     console.log(msg[i]);
+  //     console.log(msg[i].name);
+  //   }
+  //   console.log(msg);
+  //   jQuery.ajax({
+  //     url:'/form-handler.php',
+  //     type: "POST", 
+  //     data: msg, 
+  //     success: function(response) { 
+  //       console.log('Success!');
+  //       window.location.href="#openModal_tnx";
+  //       setTimeout(function(){window.location.href="#close"}, 5000);
+  //     },
+  //     error: function(response) { 
+  //       console.log('Error!');
+  //     }
+  //   });
+  //   return false;
+  // })
 
   $('.form-online-file-selector').change(function() {
     var i = 0;
