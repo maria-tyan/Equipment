@@ -9,7 +9,7 @@ function mailsend($in_mail = array(), $fields='') {
     require 'PHPMailerAutoload.php';
 // Заголовок письма меняем на тот, который нужен нам
     $thm = "Обратная связь с " . $_SERVER['SERVER_NAME'];
-    print_r( $_POST['formData']);
+    print_r( $_POST);
     exit();
     foreach ($_POST['formData'] as $val) {
         if (!empty($val['value'])) {
