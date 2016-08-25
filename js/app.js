@@ -1,6 +1,6 @@
 $(document).ready(function() {
   function send(object) {
-    console.log('vasfjksajgksafkgjsajkgsajkg');
+    console.log('send_func');
     var fieldArr = [], newFieldArr = [];
     fieldArr = object.find(':input,textarea,select').serializeArray();
 
@@ -78,8 +78,21 @@ $(document).ready(function() {
     setTimeout(function(){window.location.href="#close"}, 5000);
   }
 
-  $('form').each(function () {
+  $('form').on('submit', function (e) {
+    console.log('each', $(this))
+    e.preventDefault();
     $(this).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 4,
+        },
+        phone: {
+          required: true,
+          minlength: 15,
+          regexp: '[^_]+$',
+        },
+      },
       errorPlacement: function (error, element) {
 
       },
@@ -96,13 +109,20 @@ $(document).ready(function() {
     });
   });
 
+  $('.form-send-link').click(
+    function(){
+      console.log('click');
+      $(this).parents('form').submit();
+    }
+  )
+
   $(".input-phone").inputmask("mask", {"mask": "+7(999) 999-99-99"});
 
   $('.form-online-file-selector').change(function() {
     var i = 0;
     
     var parent = $(this).parents('.form-online-file-preview');
-    var preview = parent; //parent.find('.form-online-file-preview[data-item="0"]');
+    var preview = parent; 
     var img = $('<img/>');
 
     var file    = $(this)[0].files[0];

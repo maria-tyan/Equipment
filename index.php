@@ -61,7 +61,7 @@
             <img class="tecnic-img" src="img/2_1.jpg" alt="">
             <p class="tecnic-name">автокраны</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="2">
+          <a href="#openModal_sell" class="block block-anim" data-item="2">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -70,7 +70,7 @@
             <img class="tecnic-img" src="img/2_2.jpg" alt="">
             <p class="tecnic-name">автовышки</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="3">
+          <a href="#openModal_sell" class="block block-anim" data-item="3">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -79,7 +79,7 @@
             <img class="tecnic-img" src="img/2_3.jpg" alt="">
             <p class="tecnic-name">экскаваторы <br>всех типов </p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="4">
+          <a href="#openModal_sell" class="block block-anim" data-item="4">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -88,7 +88,7 @@
             <img class="tecnic-img" src="img/2_4.jpg" alt="">
             <p class="tecnic-name">экскаваторы- <br>погрузчики</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="5">
+          <a href="#openModal_sell" class="block block-anim" data-item="5">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -97,7 +97,7 @@
             <img class="tecnic-img" src="img/2_5.jpg" alt="">
             <p class="tecnic-name">погрузчики<br> всех типов </p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="6">
+          <a href="#openModal_sell" class="block block-anim" data-item="6">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -106,7 +106,7 @@
             <img class="tecnic-img" src="img/2_6.jpg" alt="">
             <p class="tecnic-name">бетономешалки</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="7">
+          <a href="#openModal_sell" class="block block-anim" data-item="7">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -115,7 +115,7 @@
             <img class="tecnic-img" src="img/2_7.jpg" alt="">
             <p class="tecnic-name">бетононасосы</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="8">
+          <a href="#openModal_sell" class="block block-anim" data-item="8">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -124,7 +124,7 @@
             <img class="tecnic-img" src="img/2_8.jpg" alt="">
             <p class="tecnic-name">бульдозеры</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="9">
+          <a href="#openModal_sell" class="block block-anim" data-item="9">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -133,7 +133,7 @@
             <img class="tecnic-img" src="img/2_9.jpg" alt="">
             <p class="tecnic-name">дорожную <br>технику</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="10">
+          <a href="#openModal_sell" class="block block-anim" data-item="10">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -142,7 +142,7 @@
             <img class="tecnic-img" src="img/2_10.jpg" alt="">
             <p class="tecnic-name">самосвалы</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="11">
+          <a href="#openModal_sell" class="block block-anim" data-item="11">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -151,7 +151,7 @@
             <img class="tecnic-img" src="img/2_11.jpg" alt="">
             <p class="tecnic-name">грейдеры</p>
           </a>
-          <a href="#openModal_sell" class="block" data-item="12">
+          <a href="#openModal_sell" class="block block-anim" data-item="12">
             <div class="animated cover-bg"></div>
             <div class="cover-title">
               <i class="fa fa-check-circle" aria-hidden="true"></i> 
@@ -192,8 +192,7 @@
           <form action="#" class="form callback-form">
             <input type="text" name="name" class="input-name name" placeholder="Ваше имя">
             <input type="text" name="phone" class="input-phone phone" placeholder="Ваш телефон">
-            <!--<input type="submit" class="send callback-form-btn input-btn">            </input>-->
-            <a class="call">
+            <a class="call form-send-link">
               <div class="animated hover-bg"></div>
               <div class="hover-title">Отправить</div>
               <div class="title">Отправить</div>
@@ -283,7 +282,6 @@
               </div>
               <div class="block block_image">
                 <div class="inline form-online-file">
-                  
                   <div class="image inline form-online-file-preview" data-item="0">
                     <input name="image1" class="form-online-file-selector" type="file">
                     <div class="animated zoomIn cover-bg"></div>
@@ -310,9 +308,9 @@
                   </div>
                 </div>
                 <div class="inline">
-                  <input type="text" class="form-online-phone input-phone" placeholder="Сообщите Ваш номер телефона">
+                  <input type="text" name="phone" class="form-online-phone input-phone" placeholder="Сообщите Ваш номер телефона">
                   <div class="inline_right">
-                    <a class="call">
+                    <a class="call form-send-link">
                       <div class="animated hover-bg"></div>
                       <div class="hover-title">Отправить</div>
                       <div class="title">Отправить</div>
@@ -498,10 +496,10 @@
         <div class="modal-data">
         </div>
         <form id="form-modal" class="form callback-form" >
-          <input type="text" name="name" class="input-name name"  placeholder="Ваше имя" data-title="Имя: " required>
-          <input type="text" name="phone" class="input-phone phone" placeholder="Ваш телефон" data-title="Телефон: " required>
+          <input type="text" name="name" class="input-name name"  placeholder="Ваше имя" data-title="Имя: ">
+          <input type="text" name="phone" class="input-phone phone" placeholder="Ваш телефон" data-title="Телефон: ">
           
-          <a class="call">
+          <a class="call form-send-link">
             <div class="animated hover-bg"></div>
             <div class="hover-title">Отправить</div>
             <div class="title">Отправить</div>
@@ -527,13 +525,13 @@
         </dir>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
     <script src="js/jquery.viewportchecker.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/inputmask.js"></script>
     <script src="js/jquery.inputmask.js"></script>
-    <script src="js/jquery-3.1.0.min.js.js"></script>
+    
     <script src="js/app.js"></script>
   </body>
 </html>
